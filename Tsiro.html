@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu à Commande Virtuel</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Spécialité Malagasy - Hay'nay Tsiro</h1>
+    <div class="menu-buttons">
+      <button onclick="showCategories()">Menu</button>
+    </div>
+
+    <div class="categories" id="categories">
+      <button onclick="showCategory('petit-dejeuner')">Petit Déjeuner</button>
+      <button onclick="showCategory('plat-riz')">Plat de Riz Malagasy</button>
+      <button onclick="showCategory('beignet')">Beignet Malagasy</button>
+      <button onclick="showCategory('boisson-chaud')">Boisson Chaud</button>
+    </div>
+
+    <div class="menu" id="menu">
+      <!-- Petit Déjeuner -->
+      <div class="category" id="petit-dejeuner">
+        <h2>Petit Déjeuner</h2>
+        <div class="item" data-price="15000">Vary amin'ny anana spéciale <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="10000">Vary amin'ny anana Boosté <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="5000">Vary amin'ny anana Simple <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="5000">Spécialité mokary <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="5000">Spécialité Mafilotra <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="3000">Katsaka au coco <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="3000">Mangahazo au coco <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="3000">Patate douce au lait <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="2000">Katsaka au lait <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+      </div>
+
+      <!-- Plat de Riz Malagasy -->
+      <div class="category" id="plat-riz">
+        <h2>Plat de Riz Malagasy</h2>
+        <div class="item" data-price="30000">Ravitoto sy henankisoa au coco <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="25000">Ovy sy trondro maina Rony <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="25000">Voanjobory sy henankisoa <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="20000">Ravim-voatavo sy henan'omb <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="20000">Saucisse sy tsaramaso <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="20000">Ovy sy patsa rony <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="15000">Ravim-bomanga sy henan'omb <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+      </div>
+
+      <!-- Beignet Malagasy -->
+      <div class="category" id="beignet">
+        <h2>Beignet Malagasy</h2>
+        <div class="item" data-price="10000">Pakopako sy masikita sauce <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="5000">Assiette de beignet de banane <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="5000">Koban’ny talatan’ ny volonondry <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="5000">Assiette de beignet à variété <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="3000">Godrogodro <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="2000">Assiette de beignet croquant <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="2000">Assiette de beignet au manioc <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="1000">Mofo menakely <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="1000">Koba akondro <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+      </div>
+
+      <!-- Boisson Chaud -->
+      <div class="category" id="boisson-chaud">
+        <h2>Boisson Chaud</h2>
+        <div class="item" data-price="2000">Verre de Lait <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="2000">Café au lait <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="2000">Chocolat chaud <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="1500">Thé au cannel <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="1500">Verre de Lait soja <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+        <div class="item" data-price="1000">Café nature <input type="number" min="0" value="0" onchange="updateOrder()"></div>
+      </div>
+    </div>
+
+    <!-- Récapitulatif -->
+    <div class="order-summary">
+      <h2>Votre Commande</h2>
+      <ul id="order-list"></ul>
+      <p>Total: <span id="total">0</span> Ar</p>
+      <label>Méthode de paiement :</label>
+      <select id="payment-method">
+        <option value="espèces">Espèces</option>
+        <option value="mobile-money">Mobile Money</option>
+      </select>
+      <button class="confirm-btn" onclick="confirmOrder()">Confirmer la commande</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
